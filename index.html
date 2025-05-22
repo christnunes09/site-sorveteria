@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sorveteria Gebon</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body><!-- Botão Jarvis -->
+<button id="btnJarvis" title="Falar com Jarvis" style="position:fixed;bottom:20px;right:20px;padding:15px;border-radius:50%;background:#4B0082;color:#fff;border:none;cursor:pointer;z-index:1000;">
+  🤖
+</button>
+
+<!-- Janela de resposta do Jarvis -->
+<div id="jarvisResposta" style="position:fixed;bottom:80px;right:20px;max-width:250px;background:#4B0082;color:#fff;padding:15px;border-radius:10px;display:none;z-index:1000;font-family:sans-serif;box-shadow:0 0 10px rgba(0,0,0,0.5);"></div>
+
+  <header class="topo">
+    <h1>Sorveteria Gebon</h1>
+    <nav>
+      <ul>
+        <li><a href="#" class="aba-link ativa" data-aba="sabores">Sabores</a></li>
+        <li><a href="#" class="aba-link" data-aba="sobre">Quem Somos</a></li>
+        <li><a href="#" class="aba-link" data-aba="contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Sabores -->
+    <section id="sabores" class="aba-conteudo ativa">
+      <h2>Nossos Sabores</h2>
+      <div class="card-container">
+        <div class="card" onclick="mostrarDetalhes('Morango')">
+          <img src="20230318_160920.jpg" alt="Morango" />
+          <h3>Morango</h3>
+        </div>
+        <div class="card" onclick="mostrarDetalhes('Chocolate')">
+          <img src="496089960_1291092769688514_839761002657093282_n.jpg"Chocolate" />
+          <h3>Chocolate</h3>
+        </div>
+        <!-- Modal de Detalhes do Sabor -->
+<div id="modal-sabor" class="modal">
+  <div class="modal-conteudo">
+    <span class="fechar-modal" onclick="fecharModal()">&times;</span>
+    <div id="conteudo-modal"></div>
+  </div>
+</div>
+
+        <div class="card" onclick="mostrarDetalhes('Baunilha')">
+          <img src="534c0008-6bfa-46e3-a97d-37385a2d1e6a.jpg" alt="Baunilha" />
+          <h3>Baunilha</h3>
+        </div>
+      </div>
+      <div id="detalhes-sabor" class="detalhes-sabor"></div>
+    </section>
+
+    <!-- Quem Somos -->
+    <section id="sobre" class="aba-conteudo">
+      <h2>Quem Somos</h2>
+      <div class="sobre-container">
+        <img src="images.jpg" alt="Nossa família" class="sobre-imagem" />
+        <div class="sobre-texto">
+          <p>
+            A <strong>Sorveteria Gebon</strong> é uma empresa familiar que nasceu do sonho simples de uma família que sempre acreditou no cuidado e na dedicação. Desde o preparo até o atendimento, fazemos tudo com carinho.
+          </p>
+          <p>
+            Nossos sabores são cuidadosamente criados para oferecer a melhor experiência, com ingredientes frescos e muita qualidade. A humildade e o bom atendimento são nossos pilares.
+          </p>
+          <p>
+            Aqui, você não só encontra sorvetes deliciosos, mas também um espaço acolhedor para toda a família.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="aba-conteudo">
+      <h2>Contato</h2>
+      <form id="formContato" onsubmit="enviarWhatsApp(event)">
+        <input type="text" id="nome" placeholder="Seu nome" required />
+        <input type="email" id="email" placeholder="Seu e-mail" required />
+        <textarea id="mensagem" placeholder="Sua mensagem"></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+
+      <div class="redes-sociais">
+        <h3>Nos siga nas redes sociais</h3>
+        <a href="https://wa.me/5541999222039" target="_blank" class="whatsapp">📱 WhatsApp</a>
+        <a href="https://www.facebook.com/SorveteriaGebonSantaTerezinha/?locale=pt_BR" target="_blank" class="facebook">📘 Facebook</a>
+        <a href="https://www.instagram.com/gebonsta.terezinha/" target="_blank" class="instagram">📸 Instagram</a>
+        <a href="https://www.ifood.com.br/delivery/fazenda-rio-grande-pr/gebon---sta-terezinha-santa-terezinha/ff928791-4a4f-4ac6-9cc0-533859c318b6?srsltid=AfmBOooiojbOlzXy9nC2ZfZZhWo7cqxhV3CWDrfUw9HYOtCIZ_eDomqO" target="_blank" class="ifood">🍽️ iFood</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sorveteria Gebon. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
