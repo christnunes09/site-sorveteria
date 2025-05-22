@@ -1,0 +1,254 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #ffa726; /* laranja */
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.5;
+}
+
+header.topo {
+  background: #ff69b4; /* rosa forte */
+  padding: 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  color: white;
+}
+
+header.topo h1 {
+  margin-bottom: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+nav ul li a:hover,
+nav ul li a.ativa {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Conteúdo */
+main {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 15px;
+}
+
+.aba-conteudo {
+  display: none;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.aba-conteudo.ativa {
+  display: block;
+}
+
+/* Cards Sabores */
+.card-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 15px;
+  border-radius: 10px;
+  width: 180px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.detalhes-sabor {
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  color: #330066; /* roxo escuro para contraste */
+}
+
+/* Quem Somos */
+.sobre-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.sobre-imagem {
+  max-width: 320px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.sobre-texto {
+  max-width: 550px;
+  line-height: 1.6;
+}
+
+.sobre-texto strong {
+  color: #ffc1e3;
+}
+
+/* Contato */
+form {
+  max-width: 400px;
+  margin: 0 auto 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid #ff69b4;
+}
+
+button[type="submit"] {
+  background-color: #ff69b4;
+  color: white;
+  padding: 10px;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #ff85c1;
+}
+
+/* Redes Sociais */
+.redes-sociais {
+  text-align: center;
+}
+
+.redes-sociais h3 {
+  margin-bottom: 15px;
+}
+
+.redes-sociais a {
+  display: inline-block;
+  margin: 0 8px;
+  padding: 10px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: opacity 0.3s;
+}
+
+.redes-sociais a.whatsapp { background: #25d366; }
+.redes-sociais a.facebook { background: #3b5998; }
+.redes-sociais a.instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+.redes-sociais a.ifood {
+  background: #FA3C3C;
+}
+
+.redes-sociais a:hover {
+  opacity: 0.8;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 105, 180, 0.8);
+  color: white;
+  font-weight: 600;
+  margin-top: 40px;
+}
+
+/* Animação */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 200;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+  padding: 40px 20px;
+}
+
+.modal-conteudo {
+  background-color: white;
+  color: #330066;
+  margin: auto;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  animation: fadeIn 0.3s ease-in-out;
+  position: relative;
+}
+
+.fechar-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  color: #ff69b4;
+  cursor: pointer;
+}
+
+#conteudo-modal h3 {
+  margin-top: 0;
+}
+
+@media (max-width: 600px) {
+  .modal-conteudo {
+    width: 90%;
+  }
+}
+
